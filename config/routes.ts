@@ -48,6 +48,14 @@
 	icon: 'AppstoreOutlined',
 	component: './products',
 	},
+	{
+    path: '/order-management',
+    name: 'Bài 2 - Quản lý đơn hàng',
+    icon: 'ShoppingCartOutlined',
+    component: './order-management',
+},
+
+
 
 
 	// DANH MUC HE THONG
