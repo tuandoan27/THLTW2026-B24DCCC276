@@ -1,4 +1,3 @@
-// src/pages/guess-number/index.tsx
 
 import React, { useState, useEffect } from 'react';
 import { Card, Input, Button, Space, Typography, Alert, message } from 'antd';
@@ -16,12 +15,10 @@ const GuessNumberGame: React.FC = () => {
   const [feedback, setFeedback] = useState<string>('');
   const [gameOver, setGameOver] = useState<boolean>(false);
 
-  // Khởi tạo game khi component mount
   useEffect(() => {
     startNewGame();
   }, []);
 
-  // Bắt đầu game mới
   const startNewGame = () => {
     const randomNum =
       Math.floor(Math.random() * (MAX_NUMBER - MIN_NUMBER + 1)) + MIN_NUMBER;
@@ -32,11 +29,9 @@ const GuessNumberGame: React.FC = () => {
     setGameOver(false);
   };
 
-  // Xử lý khi người chơi đoán
   const handleGuess = () => {
     const guessNumber = parseInt(guess);
 
-    // Validation
     if (!guess || isNaN(guessNumber)) {
       message.error('Vui lòng nhập một số hợp lệ!');
       return;
@@ -50,7 +45,6 @@ const GuessNumberGame: React.FC = () => {
     const newAttempts = attempts + 1;
     setAttempts(newAttempts);
 
-    // Kiểm tra kết quả
     if (guessNumber === targetNumber) {
       setFeedback('Chúc mừng! Bạn đã đoán đúng!');
       setGameOver(true);
@@ -66,7 +60,6 @@ const GuessNumberGame: React.FC = () => {
     setGuess('');
   };
 
-  // Xử lý Enter key
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && !gameOver) {
       handleGuess();

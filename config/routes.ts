@@ -43,17 +43,22 @@
 		component: './TodoList',
 	},
 	{
-	path: '/products',
-	name: 'Quản lý sản phẩm',
-	icon: 'AppstoreOutlined',
-	component: './products',
+		path: '/products',
+		name: 'Quản lý sản phẩm',
+		icon: 'AppstoreOutlined',
+		component: './products',
 	},
 	{
-    path: '/order-management',
-    name: 'Bài 2 - Quản lý đơn hàng',
-    icon: 'ShoppingCartOutlined',
-    component: './order-management',
-},
+		path: '/Oantuti',
+		name: '1. Oẳn tù tì',
+		component: './Oantuti',
+	},
+	{
+		path: '/QuestionBank',
+		name: '2. Ngân hàng câu hỏi',
+		component: './QuestionBank',
+	},
+
 
 
 
