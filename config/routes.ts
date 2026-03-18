@@ -49,14 +49,9 @@
 		component: './products',
 	},
 	{
-		path: '/Oantuti',
-		name: '1. Oẳn tù tì',
-		component: './Oantuti',
-	},
-	{
-		path: '/QuestionBank',
-		name: '2. Ngân hàng câu hỏi',
-		component: './QuestionBank',
+  		path: '/appointment-schedule',
+  		name: 'Đặt lịch hẹn',
+  		component: './AppointmentSchedule',
 	},
 
 
