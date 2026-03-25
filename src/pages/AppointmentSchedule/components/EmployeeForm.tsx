@@ -1,5 +1,3 @@
-// src/pages/appointment-booking/components/EmployeeForm.tsx
-
 import React, { useEffect, useState } from 'react';
 import { Form, Input, InputNumber, Modal, Button, Select, TimePicker, Space, Table } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';

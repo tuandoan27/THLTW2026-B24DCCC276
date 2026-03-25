@@ -1,5 +1,3 @@
-// src/pages/appointment-booking/components/ReviewForm.tsx
-
 import React, { useEffect } from 'react';
 import { Form, Input, Modal, Rate } from 'antd';
 import type { Appointment } from '../types';

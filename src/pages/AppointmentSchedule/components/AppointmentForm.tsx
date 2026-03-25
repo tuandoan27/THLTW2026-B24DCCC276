@@ -1,5 +1,3 @@
-// src/pages/appointment-booking/components/AppointmentForm.tsx
-
 import React, { useEffect } from 'react';
 import { Form, Input, Modal, Select, DatePicker, TimePicker, message } from 'antd';
 import type { Appointment, Employee, Service } from '../types';
@@ -50,20 +48,17 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
       const time = typeof values.time === 'string' ? values.time : values.time.format('HH:mm');
       const employeeId = values.employeeId;
 
-      // Kiểm tra nhân viên có làm việc không
       const employee = employees.find((e) => e.id === employeeId);
       if (employee && !isEmployeeWorking(employee, date, time)) {
         message.error('Nhân viên không làm việc vào thời gian này');
         return;
       }
 
-      // Kiểm tra lịch trùng
       if (checkAppointmentConflict(appointments, employeeId, date, time, initialValues?.id)) {
         message.error('Lịch hẹn bị trùng với lịch khác');
         return;
       }
 
-      // Kiểm tra giới hạn khách/ngày
       if (employee && checkEmployeeDailyLimit(appointments, employee, date, initialValues?.id)) {
         message.error('Nhân viên đã đủ số khách trong ngày');
         return;

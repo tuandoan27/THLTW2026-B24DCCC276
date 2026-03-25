@@ -53,9 +53,11 @@
   		name: 'Đặt lịch hẹn',
   		component: './AppointmentSchedule',
 	},
-
-
-
+	{
+  		path: '/QuanLySo',
+  		name: 'Quản lý Văn bằng',
+  		component: './QuanLySo',
+	},
 
 
 	// DANH MUC HE THONG
