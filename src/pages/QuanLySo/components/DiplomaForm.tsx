@@ -52,7 +52,6 @@ const DiplomaForm: React.FC<DiplomaFormProps> = ({
       ...rest
     } = values;
 
-    // ✅ FIX: ép kiểu để dùng được key string
     const customData = rest as Record<string, any>;
 
     const formattedValues = {
@@ -67,7 +66,6 @@ const DiplomaForm: React.FC<DiplomaFormProps> = ({
       customData: {} as Record<string, any>, // ✅ FIX
     };
 
-    // Thu thập dữ liệu custom
     customFields.forEach((field) => {
       let value = customData[field.name];
 
