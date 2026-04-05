@@ -1,13 +1,12 @@
-// src/pages/club-management/types/index.ts
 
 export interface Club {
   id: number;
-  avatar?: string; // Ảnh đại diện
-  name: string; // Tên CLB
-  foundedDate: string; // Ngày thành lập (YYYY-MM-DD)
-  description: string; // Mô tả (HTML)
-  leader: string; // Chủ nhiệm
-  active: boolean; // Hoạt động
+  avatar?: string; 
+  name: string;
+  foundedDate: string; 
+  description: string; 
+  leader: string; 
+  active: boolean; 
 }
 
 export type ApplicationStatus = 'Pending' | 'Approved' | 'Rejected';
@@ -20,11 +19,11 @@ export interface Application {
   phone: string;
   gender: Gender;
   address: string;
-  skills: string; // Sở trường
+  skills: string; 
   clubId: number;
-  reason: string; // Lý do đăng ký
+  reason: string; 
   status: ApplicationStatus;
-  rejectReason?: string; // Ghi chú (lý do từ chối)
+  rejectReason?: string; 
   createdAt: string;
 }
 
@@ -33,8 +32,8 @@ export interface ActionHistory {
   applicationId: number;
   action: 'Approved' | 'Rejected';
   reason?: string;
-  timestamp: string; // ISO string
-  admin: string; // Admin thực hiện
+  timestamp: string;
+  admin: string; 
 }
 
 export interface Member {

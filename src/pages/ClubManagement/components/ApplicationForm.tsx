@@ -1,4 +1,3 @@
-// src/pages/club-management/components/ApplicationForm.tsx
 
 import React, { useEffect } from 'react';
 import { Form, Input, Modal, Select } from 'antd';

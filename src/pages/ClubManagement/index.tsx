@@ -1,4 +1,3 @@
-// src/pages/club-management/index.tsx
 
 import React, { useState, useEffect } from 'react';
 import {
@@ -27,7 +26,6 @@ import {
   TeamOutlined,
   HistoryOutlined,
 } from '@ant-design/icons';
-import { Column } from '@ant-design/plots';
 import type {
   Club,
   Application,
@@ -243,26 +241,16 @@ const ClubManagement: React.FC = () => {
     rejected: applications.filter((a) => a.status === 'Rejected').length,
   };
 
-  // Chart data
-  const chartData = clubs.flatMap((club) => {
+  // Statistics by club
+  const clubStats = clubs.map((club) => {
     const clubApps = applications.filter((a) => a.clubId === club.id);
-    return [
-      {
-        club: club.name,
-        status: 'Chờ duyệt',
-        count: clubApps.filter((a) => a.status === 'Pending').length,
-      },
-      {
-        club: club.name,
-        status: 'Đã duyệt',
-        count: clubApps.filter((a) => a.status === 'Approved').length,
-      },
-      {
-        club: club.name,
-        status: 'Từ chối',
-        count: clubApps.filter((a) => a.status === 'Rejected').length,
-      },
-    ];
+    return {
+      name: club.name,
+      pending: clubApps.filter((a) => a.status === 'Pending').length,
+      approved: clubApps.filter((a) => a.status === 'Approved').length,
+      rejected: clubApps.filter((a) => a.status === 'Rejected').length,
+      total: clubApps.length,
+    };
   });
 
   // ===== Table Columns =====
@@ -476,6 +464,14 @@ const ClubManagement: React.FC = () => {
     { title: 'Admin', dataIndex: 'admin' },
   ];
 
+  const clubStatsColumns = [
+    { title: 'Tên CLB', dataIndex: 'name' },
+    { title: 'Chờ duyệt', dataIndex: 'pending' },
+    { title: 'Đã duyệt', dataIndex: 'approved' },
+    { title: 'Từ chối', dataIndex: 'rejected' },
+    { title: 'Tổng', dataIndex: 'total' },
+  ];
+
   // Filtered data
   const filteredClubs = clubs.filter((c) =>
     c.name.toLowerCase().includes(searchText.toLowerCase()),
@@ -527,15 +523,11 @@ const ClubManagement: React.FC = () => {
           </Row>
 
           <Card title="Số đơn đăng ký theo CLB">
-            <Column
-              data={chartData}
-              xField="club"
-              yField="count"
-              seriesField="status"
-              isGroup={true}
-              columnStyle={{
-                radius: [4, 4, 0, 0],
-              }}
+            <Table
+              rowKey="name"
+              columns={clubStatsColumns}
+              dataSource={clubStats}
+              pagination={false}
             />
           </Card>
         </TabPane>
