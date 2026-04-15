@@ -49,14 +49,9 @@
 		component: './products',
 	},
 	{
-  		path: '/appointment-schedule',
-  		name: 'Đặt lịch hẹn',
-  		component: './AppointmentSchedule',
-	},
-	{
-  		path: '/ClubManagement',
-  		name: 'Quản lý CLB',
-  		component: './ClubManagement',
+  		path: '/RoomManagement',
+  		name: 'Quản lý Phòng học',
+  		component: './RoomManagement',
 	},
 
 
