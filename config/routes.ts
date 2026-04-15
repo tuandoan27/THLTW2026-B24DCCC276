@@ -49,14 +49,10 @@
 		component: './products',
 	},
 	{
-  		path: '/appointment-schedule',
-  		name: 'Đặt lịch hẹn',
-  		component: './AppointmentSchedule',
-	},
-	{
-  		path: '/ClubManagement',
-  		name: 'Quản lý CLB',
-  		component: './ClubManagement',
+  		path: '/travel-planner',
+  		name: 'Du lịch',
+  		icon: 'CompassOutlined',
+  		component: './travel-planner',
 	},
 
 
