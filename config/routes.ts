@@ -49,10 +49,10 @@
 		component: './products',
 	},
 	{
-  		path: '/travel-planner',
-  		name: 'Du lịch',
-  		icon: 'CompassOutlined',
-  		component: './travel-planner',
+  		path: '/PersonalBlog',
+  		name: 'Personal Blog',
+  		icon: 'BookOutlined',
+  		component: './PersonalBlog/index',
 	},
 
 
