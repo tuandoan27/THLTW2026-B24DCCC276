@@ -49,12 +49,11 @@
 		component: './products',
 	},
 	{
-  		path: '/PersonalBlog',
-  		name: 'Personal Blog',
-  		icon: 'BookOutlined',
-  		component: './PersonalBlog/index',
-	},
-
+  	path: '/HealthTracker',
+  	name: 'Health Tracker',
+  	icon: 'HeartOutlined',
+  	component: './HealthTracker/index',
+    },
 
 	// DANH MUC HE THONG
 	// {
