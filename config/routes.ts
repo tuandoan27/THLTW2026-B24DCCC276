@@ -49,11 +49,11 @@
 		component: './products',
 	},
 	{
-  	path: '/HealthTracker',
-  	name: 'Health Tracker',
-  	icon: 'HeartOutlined',
-  	component: './HealthTracker/index',
-    },
+ 	 	path: '/KanbanBoard',
+  		name: 'Kanban Board',
+  		icon: 'ProjectOutlined',
+  		component: './KanbanBoard/index',
+	},
 
 	// DANH MUC HE THONG
 	// {
